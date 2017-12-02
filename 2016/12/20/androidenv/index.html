@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Android开发环境搭建 | imchen blog | null</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="java,android">
+    <meta name="description" content="About Android:Android, the world’s most popular mobile platform本文使用linux版的Android Studio和Android Sdk">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android开发环境搭建">
+<meta property="og:url" content="https://j2u.github.io/2016/12/20/androidenv/index.html">
+<meta property="og:site_name" content="imchen blog">
+<meta property="og:description" content="About Android:Android, the world’s most popular mobile platform本文使用linux版的Android Studio和Android Sdk">
+<meta property="og:image" content="http://p1.bpimg.com/4851/206429485a2b7a97.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/c8d2fc20815e6efc.jpg">
+<meta property="og:image" content="http://i1.piimg.com/4851/ad6a2944bb3aca97.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/16359dbf715fe76f.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/e3b27ad396e45b7f.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/c9f6ba2752ae5d5c.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/d74916f649e43d74.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/034feba03319fcf3.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/81e943f1117934e2.jpg">
+<meta property="og:image" content="http://p1.bqimg.com/4851/defd6f2f66cd1a28.jpg">
+<meta property="og:updated_time" content="2017-01-04T12:33:53.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android开发环境搭建">
+<meta name="twitter:description" content="About Android:Android, the world’s most popular mobile platform本文使用linux版的Android Studio和Android Sdk">
+<meta name="twitter:image" content="http://p1.bpimg.com/4851/206429485a2b7a97.jpg">
+    
+        <link rel="alternative" href="/atom.xml" title="imchen blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/snowball.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">imchen</h5>
+          <a href="mailto:imch1n@foxmail.com" title="imch1n@foxmail.com" class="mail">imch1n@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/j2u" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/2385275875" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android开发环境搭建</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android开发环境搭建</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-20T08:23:53.000Z" itemprop="datePublished" class="page-time">
+  2016-12-20
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/教程/">教程</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Android开发环境的搭建"><span class="post-toc-number">1.</span> <span class="post-toc-text">Android开发环境的搭建</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Java环境"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">配置Java环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置Android环境"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置Android环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建第一个Android-应用程序"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">创建第一个Android 应用程序</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#结语"><span class="post-toc-number">2.</span> <span class="post-toc-text">结语</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-androidenv"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android开发环境搭建</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年12月20日 16:23" datetime="2016-12-20T08:23:53.000Z"  itemprop="datePublished">2016-12-20</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/教程/">教程</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>About Android:<br><br>Android, the world’s most popular mobile platform<br><br>本文使用linux版的Android Studio和Android Sdk<br><a id="more"></a><br>前言：</p>
+<ul>
+<li>此教程适用于小白群体</li>
+<li>此教程属于基础类教程</li>
+<li>本人小菜鸟一个，如有错漏，欢迎批评指正</li>
+</ul>
+<h1 id="Android开发环境的搭建"><a href="#Android开发环境的搭建" class="headerlink" title="Android开发环境的搭建"></a>Android开发环境的搭建</h1><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bpimg.com/4851/206429485a2b7a97.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h2 id="配置Java环境"><a href="#配置Java环境" class="headerlink" title="配置Java环境"></a>配置Java环境</h2><ul>
+<li>配置java 环境需要下载JDK，到<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">oracle官网</a>下载<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/c8d2fc20815e6efc.jpg" alt="下载" title="">
+                </div>
+                <div class="image-caption">下载</div>
+            </figure>
+选择Accept License Agreement，然后再根据自己的系统环境选择jdk下载，例如我的是ubuntu 64bit 我选择的是Linux x64。<br><br>下载完解压到相应的目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo tar -zxvf jdk-8u111-linux-x64.tar.gz -C /usr/share</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>解压完把java的添加到全局环境变量，编辑profile文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vim /etc/profile</div></pre></td></tr></table></figure></p>
+<p>在profile末尾追加<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/usr/share/jdk1.8.0_111</div><div class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div><div class="line">JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre/lib</div><div class="line">CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</div><div class="line"><span class="built_in">export</span> JAVA_HOME</div><div class="line"><span class="built_in">export</span> PATH</div><div class="line"><span class="built_in">export</span> CLASSPATH</div><div class="line"><span class="built_in">export</span> JRE_HOME</div></pre></td></tr></table></figure></p>
+<p>保存并执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
+<p>测试java环境是否配置成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">java -version</div><div class="line">java version <span class="string">"1.8.0_111"</span></div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_111-b14)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)</div></pre></td></tr></table></figure></p>
+<p>配置成功显示如上有java版本 java se的版本，如果没成功的请仔细检查配置文件</p>
+<h2 id="配置Android环境"><a href="#配置Android环境" class="headerlink" title="配置Android环境"></a>配置Android环境</h2><ul>
+<li>配置Android环境所需要的的东西可以到<a href="https://developers.google.cn/" target="_blank" rel="external">Google Develpers</a>(google 最近才开通的博客网站，很多android开发工具不用翻墙可以在这个网站下载了)下载.<br><br>下载<a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="external">android-sdk和Android-Studio</a>,选择自己平台对应的版本，我这里的是ubuntu环境<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://i1.piimg.com/4851/ad6a2944bb3aca97.jpg" alt="下载" title="">
+                </div>
+                <div class="image-caption">下载</div>
+            </figure>
+把下载的文件解压到相应的目录<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">unzip android-studio-ide-145.3537739-linux.zip <span class="_">-d</span> /home/android-dev/ <span class="comment">#解压android sdk</span></div><div class="line">unzip android-studio-ide-145.3537739-linux.zip <span class="_">-d</span> /home/android-dev/ <span class="comment">#解压android studio</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>编辑/etc/profile追加内容：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Android path</span></div><div class="line">ANDROID_HOME=/home/android-dev/android-sdk-linux</div><div class="line">PATH=<span class="variable">$ANDROID_HOME</span>/platform-tools/:<span class="variable">$PATH</span></div><div class="line">PATH=<span class="variable">$ANDROID_HOME</span>/tools/:<span class="variable">$PATH</span></div><div class="line"><span class="built_in">export</span> JAVA_HOME</div><div class="line"><span class="built_in">export</span> ANDROID_HOME</div></pre></td></tr></table></figure></p>
+<p>保存并执行<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
+<p>测试配置是否成功：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">adb version</div><div class="line">Android Debug Bridge version 1.0.36</div><div class="line">Revision 302830efc153-android</div></pre></td></tr></table></figure></p>
+<p>如上所示输出了adb版本，配置成功</p>
+<h2 id="创建第一个Android-应用程序"><a href="#创建第一个Android-应用程序" class="headerlink" title="创建第一个Android 应用程序"></a>创建第一个Android 应用程序</h2><ul>
+<li>启动Android Studio<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> home/android-dev/android-studio/bin</div><div class="line">./studio.sh</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>第一次启动android studio需要配置一下<br>因为我之前有安装过旧版本的android studio所以第一次启动时候会问我是否导入之前版本的配置文件，选择不导入 ok<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/16359dbf715fe76f.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>接下来就是一路next就可以了,到这里需要选择Custom,不然的话会重新下载一遍android sdk<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/e3b27ad396e45b7f.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>安装更新,等更新安装完<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/c9f6ba2752ae5d5c.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>新建一个Project,选择Start a new Android Studio project,然后继续next<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/d74916f649e43d74.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>等待项目构建完成之后，点击绿色的run 按钮启动程序<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/034feba03319fcf3.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>选择运行的设备，我选择的是我的手机，也可以使用模拟器来运行<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/81e943f1117934e2.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure><br>恭喜你第一个安卓应用程序运行起来了<br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/defd6f2f66cd1a28.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure></p>
+<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>工欲善其事,必先利其器。我的android开发环境已经搭好了，那么剩下的就是好好写代码了！</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-04T12:33:53.000Z" itemprop="dateUpdated">2017年1月4日 20:33</time>
+</span><br>
+
+
+        Copyright © 2017 imchen：<a href="/2016/12/20/androidenv/" target="_blank" rel="external">https://j2u.github.io/2016/12/20/androidenv/</a>
+    </div>
+    <footer>
+        <a href="https://j2u.github.io">
+            <img src="/img/snowball.jpg" alt="imchen">
+            imchen
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2016/12/20/androidenv/&title=《Android开发环境搭建》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2016/12/20/androidenv/&title=《Android开发环境搭建》 — imchen blog&source=About Android:Android, the world’s most popular mobile platform本文使用linux版的And..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2016/12/20/androidenv/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android开发环境搭建》 — imchen blog&url=https://j2u.github.io/2016/12/20/androidenv/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2016/12/20/androidenv/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/26/buildaosp/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">编译AOSP源码</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/19/installblog/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">使用hexo+github page搭建免费的博客</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imch1n';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>imchen blog &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2016/12/20/androidenv/&title=《Android开发环境搭建》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2016/12/20/androidenv/&title=《Android开发环境搭建》 — imchen blog&source=About Android:Android, the world’s most popular mobile platform本文使用linux版的And..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2016/12/20/androidenv/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android开发环境搭建》 — imchen blog&url=https://j2u.github.io/2016/12/20/androidenv/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2016/12/20/androidenv/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://j2u.github.io/2016/12/20/androidenv/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'imchen';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'imchen';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

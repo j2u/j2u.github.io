@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>使用hexo+github page搭建免费的博客 | imchen blog | null</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="hexo,node.js,github">
+    <meta name="description" content="前言：
+
+此教程适用于小白群体
+此教程属于基础类教程
+本人小菜鸟一个，如有错漏，欢迎批评指正
+好了往下看吧
+
+0x0关于Hexo和github Page什么是github page，以下是引用自官网的介绍 https://help.github.com/articles/what-is-github-pages/ ：
+
+What is GitHub Pages?">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用hexo+github page搭建免费的博客">
+<meta property="og:url" content="https://j2u.github.io/2016/12/19/installblog/index.html">
+<meta property="og:site_name" content="imchen blog">
+<meta property="og:description" content="前言：
+
+此教程适用于小白群体
+此教程属于基础类教程
+本人小菜鸟一个，如有错漏，欢迎批评指正
+好了往下看吧
+
+0x0关于Hexo和github Page什么是github page，以下是引用自官网的介绍 https://help.github.com/articles/what-is-github-pages/ ：
+
+What is GitHub Pages?">
+<meta property="og:updated_time" content="2017-01-18T12:40:09.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用hexo+github page搭建免费的博客">
+<meta name="twitter:description" content="前言：
+
+此教程适用于小白群体
+此教程属于基础类教程
+本人小菜鸟一个，如有错漏，欢迎批评指正
+好了往下看吧
+
+0x0关于Hexo和github Page什么是github page，以下是引用自官网的介绍 https://help.github.com/articles/what-is-github-pages/ ：
+
+What is GitHub Pages?">
+    
+        <link rel="alternative" href="/atom.xml" title="imchen blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/snowball.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">imchen</h5>
+          <a href="mailto:imch1n@foxmail.com" title="imch1n@foxmail.com" class="mail">imch1n@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/j2u" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/2385275875" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">使用hexo+github page搭建免费的博客</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">使用hexo+github page搭建免费的博客</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-19T14:22:56.000Z" itemprop="datePublished" class="page-time">
+  2016-12-19
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/blog/">blog</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0x0关于Hexo和github-Page"><span class="post-toc-number">1.</span> <span class="post-toc-text">0x0关于Hexo和github Page</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0x1-创建github-page"><span class="post-toc-number">2.</span> <span class="post-toc-text">0x1 创建github page</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0x2-安装Node-js和Hexo"><span class="post-toc-number">3.</span> <span class="post-toc-text">0x2 安装Node.js和Hexo</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0x3-给博客换主题"><span class="post-toc-number">4.</span> <span class="post-toc-text">0x3 给博客换主题</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#0x4-安装工程中遇到的错误和解决办法"><span class="post-toc-number">5.</span> <span class="post-toc-text">0x4 安装工程中遇到的错误和解决办法</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-installblog"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">使用hexo+github page搭建免费的博客</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年12月19日 22:22" datetime="2016-12-19T14:22:56.000Z"  itemprop="datePublished">2016-12-19</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/blog/">blog</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>前言：</p>
+<ul>
+<li>此教程适用于小白群体</li>
+<li>此教程属于基础类教程</li>
+<li>本人小菜鸟一个，如有错漏，欢迎批评指正</li>
+<li>好了往下看吧</li>
+</ul>
+<h1 id="0x0关于Hexo和github-Page"><a href="#0x0关于Hexo和github-Page" class="headerlink" title="0x0关于Hexo和github Page"></a>0x0关于Hexo和github Page</h1><p>什么是github page，以下是引用自官网的介绍 <a href="https://help.github.com/articles/what-is-github-pages/" target="_blank" rel="external">https://help.github.com/articles/what-is-github-pages/</a> ：</p>
+<blockquote>
+<p>What is GitHub Pages?<a id="more"></a><br>GitHub Pages is a static site hosting service.<br>GitHub Pages is designed to host your personal, organization, or project pages directly from a GitHub repository. To learn more about the different types of GitHub Pages sites, see “User, organization, and project pages.”<br>You can create and publish GitHub Pages online using the Jekyll Theme Chooser. If you prefer to work locally, you can use GitHub Desktop or the command line.</p>
+</blockquote>
+<p>什么是Hexo？引用自官网的介绍 <a href="https://hexo.io/docs/" target="_blank" rel="external">https://hexo.io/docs/</a> ：</p>
+<blockquote>
+<p>What is Hexo?<br>Hexo is a fast, simple and powerful blog framework. You write posts in Markdown (or other languages) and Hexo generates static files with a beautiful theme in seconds.</p>
+</blockquote>
+<h1 id="0x1-创建github-page"><a href="#0x1-创建github-page" class="headerlink" title="0x1 创建github page"></a>0x1 创建github page</h1><ul>
+<li><strong>首先要有一个github账号，请到<a href="https://github.com" target="_blank" rel="external">https://github.com</a> 注册一个github账号</strong></li>
+<li><strong>注册完登录之后新建一个repository</strong><br>击右上角的“+”号，选择“New repository”菜单，创建仓库.</li>
+<li><strong>在Create a new repository页面填写相关信息</strong><br>1.Repository name 填写：username.github.io,把 Initialize this repository with a README 勾选上,然后点击绿色的按钮 Create repository<br>2.点击repository右边的 Settings，往下拉到 GitHub Pages 部分，点击 Change theme ，然后再点击右边的绿色按钮 select theme<br>3.这时候在浏览器访问你的github page博客地址 <a href="https://yourname.github.io" target="_blank" rel="external">https://yourname.github.io</a> 就可以看到你的博客了</li>
+</ul>
+<h1 id="0x2-安装Node-js和Hexo"><a href="#0x2-安装Node-js和Hexo" class="headerlink" title="0x2 安装Node.js和Hexo"></a>0x2 安装Node.js和Hexo</h1><ul>
+<li><p><strong>安装git</strong><br>打开终端 alt+ctrl+T 在终端输入命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>安装node.js</strong><br>安装node.js前需要安装g++编译器，如果你已经安装过此处可以跳过<br>在shell终端执行命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install build-essential</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>node.js安装方式有几种，我是用源码编译的方式安装的，源码下载<a href="https://nodejs.org/en/download/" target="_blank" rel="external">https://nodejs.org/en/download/</a> 当然你可以选择其他的安装方式。<br>下载完源码解压到任意目录，然后进入到解压目录执行以下命令：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">./configure</div><div class="line">make</div><div class="line">sudo make install</div></pre></td></tr></table></figure></p>
+<p>make编译的时间有点长，取决于你的电脑配置，像我的电脑就编译了半个钟….<br>安装完之后测试node.js是否安装成功，在shell终端输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">node -v</div></pre></td></tr></table></figure></p>
+<p>安装成功了会输出node.js的版本信息，我的是6.9.2：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">v6.9.2</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>安装npm</strong><br>在shell终端执行命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">curl http://npmjs.org/install.sh | sudo sh</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果使用上面的命令一直卡主不动可以换一种方法，node.js的<a href="https://github.com/nodejs-tw/nodejs-wiki-book/blob/master/zh-tw/node_npm.rst" target="_blank" rel="external">github</a>可以看文档<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-software-properties</div><div class="line">sudo add-apt-repository ppa:gias-kay-lee/npm</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install npm</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p><strong>安装hexo</strong><br>命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo npm install -g hexo</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>配置hexo</strong><br>创建一个存放博客的文件夹，然后进入到该目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mkdir myB<span class="built_in">log</span></div><div class="line"><span class="built_in">cd</span> myB<span class="built_in">log</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>执行命令初始博客的根目录<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure></p>
+<ul>
+<li><strong>让hexo关联到github.io</strong><br>安装hexo-deployer-git:<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>配置hexo博客根目录下的_config.yml文件：<br>找到# deploy节点编辑：<br>type: 填写 git<br>repo： 填写你的github.io地址<br>branch： 填写 master<br><em>注意：”: “ 后面有一个空格，一定要细心</em><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Deployment</span></div><div class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></div><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:yourname/.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p><strong>配置ssh</strong><br>首先配置一下git<br><em>“youremail”是你个人的具体邮箱地址</em></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.email <span class="string">"youremail"</span></div><div class="line">git config --global user.name <span class="string">"youname"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>生成秘钥：<br>输入命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"yourmail"</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>之后提示<code>Generating public/private rsa key pair.
+Enter file in which to save the key (/your_home_path/.ssh/id_rsa):</code><br>按enter键之后提示：<br><code>Enter passphrase (empty for no passphrase): [Type a passphrase]
+Enter same passphrase again: [Type passphrase again]</code><br>可以不输入直接enter<br>最后的生成信息：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Your identification has been saved <span class="keyword">in</span> /your_home_path/.ssh/id_rsa.</div><div class="line">Your public key has been saved <span class="keyword">in</span> /your_home_path/.ssh/id_rsa.pub.</div><div class="line">The key fingerprint is:</div><div class="line"><span class="comment">#01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db yourmail  #指纹每个人的都不一样的</span></div></pre></td></tr></table></figure></p>
+<p>在相应的目录会生成两个文件 id_rsa 和 id_rsa.pub</p>
+<ul>
+<li>将ssh key添加到GitHub中<br>打开id_rsa.pub把内容复制，粘贴到github-&gt;setting-&gt;SSH and GPG keys-&gt;New SSH Key<br>title自己写一个，key就是复制的内容，然后Add SSH Key</li>
+<li>验证一下SSH是否配置成功了<br>输入命令：<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果成功了你会看到类似于<code>Hi j2u! You&#39;ve successfully authenticated, but GitHub does not provide shell access.</code> 的提示信息。  </p>
+<p><strong>到这里安装和配置都完成了啦，那么让我们来开始写第一篇博客吧！</strong></p>
+<ul>
+<li><p>第一步：创建一个新页面(名字随意，此处叫“helloHexo”)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post <span class="string">"helloHexo"</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>第二部：生成html</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
+</li>
+<li><p>第三步：发布到github.io</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>好了赶紧打开自己博客看看效果吧，在浏览器输入博客地址，例如我的地址是：<a href="https://j2u.github.io">https://j2u.github.io</a> ，是不是看到了自己的博客啊！</strong></p>
+<h1 id="0x3-给博客换主题"><a href="#0x3-给博客换主题" class="headerlink" title="0x3 给博客换主题"></a>0x3 给博客换主题</h1><ul>
+<li><strong>hexo主题可以到 <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a> 找喜欢的主题，有很多漂亮的主题选择</strong><br>以我现在所用的主题为例：<br>在网站上看到喜欢的主题，然后点进去获取到主题的地址 <a href="https://github.com/yscoder/hexo-theme-indigo/wiki/%E5%AE%89%E8%A3%85" target="_blank" rel="external">https://github.com/yscoder/hexo-theme-indigo/wiki/%E5%AE%89%E8%A3%85</a> ，在博客的根目录下执行命令<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git@github.com:yscoder/hexo-theme-indigo.git themes/indigo</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>按照文档说的去安装一些依赖包，不同的主题依赖包不一样，详细的信息请看主题安装的doc</p>
+<ul>
+<li>主题安装完之后编辑本地博客的根目录下的 _config.yml,找到Extensions节点，修改theme： themenName 保存即可<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Extensions</span></div><div class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></div><div class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></div><div class="line">theme: indigo	<span class="comment">#修改此项</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="0x4-安装工程中遇到的错误和解决办法"><a href="#0x4-安装工程中遇到的错误和解决办法" class="headerlink" title="0x4 安装工程中遇到的错误和解决办法"></a>0x4 安装工程中遇到的错误和解决办法</h1><ul>
+<li><strong>类似于这样的错误(部分关键词)“……node.js:810var cwd = process.cwd();”</strong><br>搜索了一下，我的解决办法事重启shell终端。。。</li>
+<li><strong>没有配置ssh</strong><br>一开始没有配置ssh，导致hexo连接不上github，把ssh配上即可</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-18T12:40:09.000Z" itemprop="dateUpdated">2017年1月18日 20:40</time>
+</span><br>
+
+
+        Copyright © 2017 imchen：<a href="/2016/12/19/installblog/" target="_blank" rel="external">https://j2u.github.io/2016/12/19/installblog/</a>
+    </div>
+    <footer>
+        <a href="https://j2u.github.io">
+            <img src="/img/snowball.jpg" alt="imchen">
+            imchen
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node-js/">node.js</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2016/12/19/installblog/&title=《使用hexo+github page搭建免费的博客》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2016/12/19/installblog/&title=《使用hexo+github page搭建免费的博客》 — imchen blog&source=前言：
+
+此教程适用于小白群体
+此教程属于基础类教程
+本人小菜鸟一个，如有错漏，欢迎批评指正
+好了往下看吧
+
+0x0关于Hexo和github Page什..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2016/12/19/installblog/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用hexo+github page搭建免费的博客》 — imchen blog&url=https://j2u.github.io/2016/12/19/installblog/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2016/12/19/installblog/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/20/androidenv/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android开发环境搭建</h4>
+      </a>
+    </div>
+  
+
+  
+</nav>
+
+
+
+    
+
+
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imch1n';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>imchen blog &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2016/12/19/installblog/&title=《使用hexo+github page搭建免费的博客》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2016/12/19/installblog/&title=《使用hexo+github page搭建免费的博客》 — imchen blog&source=前言：
+
+此教程适用于小白群体
+此教程属于基础类教程
+本人小菜鸟一个，如有错漏，欢迎批评指正
+好了往下看吧
+
+0x0关于Hexo和github Page什..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2016/12/19/installblog/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《使用hexo+github page搭建免费的博客》 — imchen blog&url=https://j2u.github.io/2016/12/19/installblog/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2016/12/19/installblog/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://j2u.github.io/2016/12/19/installblog/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'imchen';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'imchen';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

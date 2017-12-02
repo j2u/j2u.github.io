@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>学习Spring boot | imchen blog | null</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Spring,Java,Springboot">
+    <meta name="description" content="Spring Boot@注解@SpringBootApplication申明让spring boot自动给程序进行必要的配置，这个配置等同于@Configuration ，@EnableAutoConfiguration 和 @ComponentScan 三个配置。
+@ResponseBody该注解修饰的函数，会将结果直接填充到HTTP的响应体中，一般用于构建RESTful的api，该注解一般会配">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习Spring boot">
+<meta property="og:url" content="https://j2u.github.io/2016/12/29/springboot/index.html">
+<meta property="og:site_name" content="imchen blog">
+<meta property="og:description" content="Spring Boot@注解@SpringBootApplication申明让spring boot自动给程序进行必要的配置，这个配置等同于@Configuration ，@EnableAutoConfiguration 和 @ComponentScan 三个配置。
+@ResponseBody该注解修饰的函数，会将结果直接填充到HTTP的响应体中，一般用于构建RESTful的api，该注解一般会配">
+<meta property="og:updated_time" content="2017-12-02T07:26:28.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习Spring boot">
+<meta name="twitter:description" content="Spring Boot@注解@SpringBootApplication申明让spring boot自动给程序进行必要的配置，这个配置等同于@Configuration ，@EnableAutoConfiguration 和 @ComponentScan 三个配置。
+@ResponseBody该注解修饰的函数，会将结果直接填充到HTTP的响应体中，一般用于构建RESTful的api，该注解一般会配">
+    
+        <link rel="alternative" href="/atom.xml" title="imchen blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/snowball.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">imchen</h5>
+          <a href="mailto:imch1n@foxmail.com" title="imch1n@foxmail.com" class="mail">imch1n@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/j2u" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/2385275875" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">学习Spring boot</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">学习Spring boot</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2016-12-29T09:54:24.000Z" itemprop="datePublished" class="page-time">
+  2016-12-29
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Spring-Boot"><span class="post-toc-number">1.</span> <span class="post-toc-text">Spring Boot</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注解"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">@注解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SpringBootApplication"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">@SpringBootApplication</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ResponseBody"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">@ResponseBody</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Controller-配合模板使用，return-到模板"><span class="post-toc-number">1.1.3.</span> <span class="post-toc-text">@Controller (配合模板使用，return 到模板)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RestController-Spring4"><span class="post-toc-number">1.1.4.</span> <span class="post-toc-text">@RestController (Spring4)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RequestMapping"><span class="post-toc-number">1.1.5.</span> <span class="post-toc-text">RequestMapping</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EnableAutoConfiguration"><span class="post-toc-number">1.1.6.</span> <span class="post-toc-text">@EnableAutoConfiguration</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ComponentScan"><span class="post-toc-number">1.1.7.</span> <span class="post-toc-text">@ComponentScan</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Configuration"><span class="post-toc-number">1.1.8.</span> <span class="post-toc-text">@Configuration</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Import"><span class="post-toc-number">1.1.9.</span> <span class="post-toc-text">@Import</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ImportResource"><span class="post-toc-number">1.1.10.</span> <span class="post-toc-text">@ImportResource</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Autowired"><span class="post-toc-number">1.1.11.</span> <span class="post-toc-text">@Autowired</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Service"><span class="post-toc-number">1.1.12.</span> <span class="post-toc-text">@Service</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Repository"><span class="post-toc-number">1.1.13.</span> <span class="post-toc-text">@Repository</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Bean"><span class="post-toc-number">1.1.14.</span> <span class="post-toc-text">@Bean</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Value"><span class="post-toc-number">1.1.15.</span> <span class="post-toc-text">@Value</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Qualifier"><span class="post-toc-number">1.1.16.</span> <span class="post-toc-text">@Qualifier</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Inject"><span class="post-toc-number">1.1.17.</span> <span class="post-toc-text">@Inject</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Transactional"><span class="post-toc-number">1.1.18.</span> <span class="post-toc-text">@Transactional</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#properties"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">.properties</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#yml-yml语法"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">.yml (yml语法)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">请求</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-springboot"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">学习Spring boot</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2016年12月29日 17:54" datetime="2016-12-29T09:54:24.000Z"  itemprop="datePublished">2016-12-29</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Java/">Java</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h1><h2 id="注解"><a href="#注解" class="headerlink" title="@注解"></a>@注解</h2><h3 id="SpringBootApplication"><a href="#SpringBootApplication" class="headerlink" title="@SpringBootApplication"></a>@SpringBootApplication</h3><p>申明让spring boot自动给程序进行必要的配置，这个配置等同于@Configuration ，@EnableAutoConfiguration 和 @ComponentScan 三个配置。</p>
+<h3 id="ResponseBody"><a href="#ResponseBody" class="headerlink" title="@ResponseBody"></a>@ResponseBody</h3><p>该注解修饰的函数，会将结果直接填充到HTTP的响应体中，一般用于构建RESTful的api，该注解一般会配合@RequestMapping一起使用。</p>
+<h3 id="Controller-配合模板使用，return-到模板"><a href="#Controller-配合模板使用，return-到模板" class="headerlink" title="@Controller (配合模板使用，return 到模板)"></a>@Controller (配合模板使用，return 到模板)</h3><p>用于定义控制器类，在spring 项目中由控制器负责将用户发来的URL请求转发到对应的服务接口（service层），一般这个注解在类中，通常方法需要配合注解@RequestMapping。</p>
+<ul>
+<li>@PathVariable<br>获取url中的数据<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(value = <span class="string">"/person/&#123;id&#125;"</span>,method = RequestMethod.GET)</div><div class="line">public String person(@PathVariable(value = <span class="string">"id"</span>,required = <span class="literal">false</span> ,defaultValue = <span class="string">"000"</span>) String id)&#123;</div><div class="line">    <span class="built_in">return</span> <span class="string">"name"</span>+name+<span class="string">"age"</span>+age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>请求方式：localhost:8080/person/100000</p>
+<ul>
+<li>@RequestParam<br>获取请求参数的值<br>@GetMapping(“/person”)<br>public String person(@RequestParam(value = “id”,required = false ,defaultValue = “000”) String id){<br>  return “name”+name+”age”+age;<br>}</li>
+<li>@GetMapping<br>组合注解<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(value = <span class="string">"/person"</span>,method = RequestMethod.GET)</div><div class="line">public String person(@PathVariable(value = <span class="string">"id"</span>,required = <span class="literal">false</span> ,defaultValue = <span class="string">"000"</span>) String id)&#123;</div><div class="line">    <span class="built_in">return</span> <span class="string">"name"</span>+name+<span class="string">"age"</span>+age;</div><div class="line">&#125;</div><div class="line"><span class="comment">#改用组合注解</span></div><div class="line">@GetMapping(<span class="string">"/person"</span>)</div><div class="line">public String person(@RequestParam(value = <span class="string">"id"</span>,required = <span class="literal">false</span> ,defaultValue = <span class="string">"000"</span>) String id)&#123;</div><div class="line">    <span class="built_in">return</span> <span class="string">"name"</span>+name+<span class="string">"age"</span>+age;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="RestController-Spring4"><a href="#RestController-Spring4" class="headerlink" title="@RestController (Spring4)"></a>@RestController (Spring4)</h3><p>@ResponseBody和@Controller的合集</p>
+<h3 id="RequestMapping"><a href="#RequestMapping" class="headerlink" title="RequestMapping"></a>RequestMapping</h3><p>提供路由信息，负责URL到Controller中的具体函数的映射<br>a composed annotation that acts as a shortcut for</p>
+<ul>
+<li>@PostMapping<br>@RequestMapping(method = RequestMethod.POST)</li>
+<li>@PutMapping<br>@RequestMapping(method = RequestMethod.PUT)</li>
+<li>@DeleteMapping<br>@RequestMapping(method = RequestMethod.DELETE)</li>
+<li>@PatchMapping<br>@RequestMapping(method = RequestMethod.PATCH)</li>
+</ul>
+<h3 id="EnableAutoConfiguration"><a href="#EnableAutoConfiguration" class="headerlink" title="@EnableAutoConfiguration"></a>@EnableAutoConfiguration</h3><p>Spring Boot自动配置（auto-configuration）：尝试根据你添加的jar依赖自动配置你的Spring应用。例如，如果你的classpath下存在HSQLDB，并且你没有手动配置任何数据库连接beans，那么我们将自动配置一个内存型（in-memory）数据库”。你可以将@EnableAutoConfiguration或者@SpringBootApplication注解添加到一个@Configuration类上来选择自动配置。如果发现应用了你不想要的特定自动配置类，你可以使用@EnableAutoConfiguration注解的排除属性来禁用它们</p>
+<h3 id="ComponentScan"><a href="#ComponentScan" class="headerlink" title="@ComponentScan"></a>@ComponentScan</h3><p>表示将该类自动发现（扫描）并注册为Bean，可以自动收集所有的Spring组件，包括@Configuration类。我们经常使用@ComponentScan注解搜索beans，并结合@Autowired注解导入。如果没有配置的话，Spring Boot会扫描启动类所在包下以及子包下的使用了@Service,@Repository等注解的类</p>
+<h3 id="Configuration"><a href="#Configuration" class="headerlink" title="@Configuration"></a>@Configuration</h3><p>相当于传统的xml配置文件，如果有些第三方库需要用到xml文件，建议仍然通过@Configuration类作为项目的配置主类——可以使用@ImportResource注解加载xml配置文件</p>
+<h3 id="Import"><a href="#Import" class="headerlink" title="@Import"></a>@Import</h3><p>用来导入其他配置类</p>
+<h3 id="ImportResource"><a href="#ImportResource" class="headerlink" title="@ImportResource"></a>@ImportResource</h3><p>用来加载xml配置文件</p>
+<h3 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h3><p>自动导入依赖的bean</p>
+<h3 id="Service"><a href="#Service" class="headerlink" title="@Service"></a>@Service</h3><p>一般用于修饰service层的组件</p>
+<h3 id="Repository"><a href="#Repository" class="headerlink" title="@Repository"></a>@Repository</h3><p>使用@Repository注解可以确保DAO或者repositories提供异常转译，这个注解修饰的DAO或者repositories类会被ComponetScan发现并配置，同时也不需要为它们提供XML配置项</p>
+<h3 id="Bean"><a href="#Bean" class="headerlink" title="@Bean"></a>@Bean</h3><p>用@Bean标注方法等价于XML中配置的bean</p>
+<h3 id="Value"><a href="#Value" class="headerlink" title="@Value"></a>@Value</h3><p>注入Spring boot application.properties配置的属性的值</p>
+<h3 id="Qualifier"><a href="#Qualifier" class="headerlink" title="@Qualifier"></a>@Qualifier</h3><p>@Qualifier限定描述符除了能根据名字进行注入，但能进行更细粒度的控制如何选择候选者</p>
+<h3 id="Inject"><a href="#Inject" class="headerlink" title="@Inject"></a>@Inject</h3><p>等价于默认的@Autowired，只是没有required属性</p>
+<h3 id="Transactional"><a href="#Transactional" class="headerlink" title="@Transactional"></a>@Transactional</h3><p>事务</p>
+<h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>有两种配置文件的写法，使用.properties 或者使用yml</p>
+<h3 id="properties"><a href="#properties" class="headerlink" title=".properties"></a>.properties</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">server.port:8080</div><div class="line">server.context-path:/hello</div></pre></td></tr></table></figure>
+<h3 id="yml-yml语法"><a href="#yml-yml语法" class="headerlink" title=".yml (yml语法)"></a>.yml (yml语法)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">server:</div><div class="line">  port: 8080</div><div class="line">  context-path: /hello</div><div class="line">age: 100</div></pre></td></tr></table></figure>
+<p>使用配置文件中的属性取值,使用@Value注入，配置文件中不用管值的类型：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@Value(<span class="string">"<span class="variable">$&#123;age&#125;</span>"</span>)</div><div class="line">private String age;</div></pre></td></tr></table></figure></p>
+<p>配置文件中再使用配置：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">age: 100</div><div class="line">name: imchen</div><div class="line">content: <span class="string">"cage: <span class="variable">$&#123;age&#125;</span>,cname: <span class="variable">$&#123;name&#125;</span>"</span></div></pre></td></tr></table></figure></p>
+<p>使用配置类：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Person:</div><div class="line">  age: 18</div><div class="line">  name: imchen</div><div class="line">  height: 1999</div></pre></td></tr></table></figure></p>
+<p>创建一个配置类，使用注解@ConfigurationProperties(prefix=”Person”)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">@Component</div><div class="line">@ConfigurationProperties(prefix=<span class="string">"Person"</span>)</div><div class="line">public class <span class="function"><span class="title">PersonPropertis</span></span>()&#123;</div><div class="line">  private Integer age;</div><div class="line">  private String name;</div><div class="line">  private Integer height;</div><div class="line"></div><div class="line">  public Integer <span class="function"><span class="title">getAge</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> age;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  public void <span class="built_in">set</span>Age(Integer age)&#123;</div><div class="line">    this.age=age</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  public Integer <span class="function"><span class="title">getHeight</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> height;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  public void <span class="built_in">set</span>Height(Integer height)&#123;</div><div class="line">    this.height=height;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  public String <span class="function"><span class="title">getName</span></span>()&#123;</div><div class="line">    <span class="built_in">return</span> name;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  public void <span class="built_in">set</span>Name(String name)&#123;</div><div class="line">    this.name=name;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">@RestController</div><div class="line">public class PersonController &#123;</div><div class="line"></div><div class="line">    @Autowired</div><div class="line">    private PersonPropertis personPropertis;</div><div class="line"></div><div class="line">    @RequestMapping(value = <span class="string">"/person"</span>,method = RequestMethod.GET)</div><div class="line"></div><div class="line">    public String <span class="function"><span class="title">test</span></span>()&#123;</div><div class="line"></div><div class="line">        <span class="built_in">return</span> personPropertis.getName();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>多个配置文件使用：<br><br>方式一：修改配置文件实现<br><br>application.properties<br><br>application-dev.properties<br><br>application-product.properties<br><br>在application.properties中配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">spring：</div><div class="line">  profile:</div><div class="line">  active: dev   <span class="comment">#使用哪一个配置文件</span></div></pre></td></tr></table></figure></p>
+<p>方式二：使用命令切换配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">maven install</div><div class="line">java -jar target/demo.jar --spring.profiles.ative=dev</div></pre></td></tr></table></figure></p>
+<h3 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h3><p>多个请求映射到同一个方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">@RequestMapping(value=&#123;<span class="string">"/hello"</span>,<span class="string">"hi"</span>,<span class="string">"fine"</span>&#125;,method=RequestMethod.GET)</div></pre></td></tr></table></figure></p>
+<p>把url映射到类：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@Controller</div><div class="line">@RequestMapping(<span class="string">"/main"</span>)</div><div class="line">public class PersonController &#123;</div><div class="line"></div><div class="line">    @RequestMapping(value = <span class="string">"/person"</span>,method = RequestMethod.GET)</div><div class="line">    public String person(@RequestParam(value = <span class="string">"name"</span>,required = <span class="literal">false</span> ,defaultValue = <span class="string">"defaultName"</span>) String name,@RequestParam(value = <span class="string">"age"</span>,required = <span class="literal">false</span>,defaultValue = <span class="string">"defaultAge"</span>))&#123;</div><div class="line"></div><div class="line">        <span class="built_in">return</span> name;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>请求到person()使用：localhost:8080/main/person</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-12-02T07:26:28.000Z" itemprop="dateUpdated">2017年12月2日 15:26</time>
+</span><br>
+
+
+        Copyright © 2017 imchen：<a href="/2016/12/29/springboot/" target="_blank" rel="external">https://j2u.github.io/2016/12/29/springboot/</a>
+    </div>
+    <footer>
+        <a href="https://j2u.github.io">
+            <img src="/img/snowball.jpg" alt="imchen">
+            imchen
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Springboot/">Springboot</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2016/12/29/springboot/&title=《学习Spring boot》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2016/12/29/springboot/&title=《学习Spring boot》 — imchen blog&source=学无止境" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2016/12/29/springboot/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《学习Spring boot》 — imchen blog&url=https://j2u.github.io/2016/12/29/springboot/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2016/12/29/springboot/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2016/12/29/SpringMVC/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">学习Spring MVC</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2016/12/26/buildaosp/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">编译AOSP源码</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imch1n';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>imchen blog &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2016/12/29/springboot/&title=《学习Spring boot》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2016/12/29/springboot/&title=《学习Spring boot》 — imchen blog&source=学无止境" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2016/12/29/springboot/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《学习Spring boot》 — imchen blog&url=https://j2u.github.io/2016/12/29/springboot/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2016/12/29/springboot/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://j2u.github.io/2016/12/29/springboot/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'imchen';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'imchen';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

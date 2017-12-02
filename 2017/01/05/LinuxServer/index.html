@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Linux服务器 | imchen blog | null</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Mysql,OpenJDK,java,Tomcat">
+    <meta name="description" content="做java web的一些服务器配置
+
+关于SunJDK和OpenJDK的区别请自行查阅资料SunJDK和OpenJDK可以都安装,通过加入软链接，然后用命令切换JDK的版本，很方便
+
+
+安装OpenJDK或者SunJDK，Mysql数据库，Tomcat安装OpenJDK1.添加OpenJDK的ppa1sudo add-apt-repository ppa:openjdk-r/ppa
+
+
+2.更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux服务器">
+<meta property="og:url" content="https://j2u.github.io/2017/01/05/LinuxServer/index.html">
+<meta property="og:site_name" content="imchen blog">
+<meta property="og:description" content="做java web的一些服务器配置
+
+关于SunJDK和OpenJDK的区别请自行查阅资料SunJDK和OpenJDK可以都安装,通过加入软链接，然后用命令切换JDK的版本，很方便
+
+
+安装OpenJDK或者SunJDK，Mysql数据库，Tomcat安装OpenJDK1.添加OpenJDK的ppa1sudo add-apt-repository ppa:openjdk-r/ppa
+
+
+2.更新">
+<meta property="og:image" content="http://p1.bqimg.com/4851/c8d2fc20815e6efc.jpg">
+<meta property="og:image" content="http://oittq0wmc.bkt.clouddn.com/FmAHZ3Myd_ntaBGfUu74Fw-KL7fh.png">
+<meta property="og:updated_time" content="2017-01-04T17:41:21.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux服务器">
+<meta name="twitter:description" content="做java web的一些服务器配置
+
+关于SunJDK和OpenJDK的区别请自行查阅资料SunJDK和OpenJDK可以都安装,通过加入软链接，然后用命令切换JDK的版本，很方便
+
+
+安装OpenJDK或者SunJDK，Mysql数据库，Tomcat安装OpenJDK1.添加OpenJDK的ppa1sudo add-apt-repository ppa:openjdk-r/ppa
+
+
+2.更新">
+<meta name="twitter:image" content="http://p1.bqimg.com/4851/c8d2fc20815e6efc.jpg">
+    
+        <link rel="alternative" href="/atom.xml" title="imchen blog" type="application/atom+xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@1.5.2/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/snowball.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">imchen</h5>
+          <a href="mailto:imch1n@foxmail.com" title="imch1n@foxmail.com" class="mail">imch1n@foxmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/j2u" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://weibo.com/u/2385275875" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Linux服务器</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Linux服务器</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-01-04T17:40:53.000Z" itemprop="datePublished" class="page-time">
+  2017-01-05
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装OpenJDK"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装OpenJDK</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装SunJDK"><span class="post-toc-number">2.</span> <span class="post-toc-text">安装SunJDK</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Mysql数据库"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装Mysql数据库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装Tomcat"><span class="post-toc-number">4.</span> <span class="post-toc-text">安装Tomcat</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-LinuxServer"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Linux服务器</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017年01月05日 1:40" datetime="2017-01-04T17:40:53.000Z"  itemprop="datePublished">2017-01-05</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Linux/">Linux</a></li></ul>
+
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <ul>
+<li>做java web的一些服务器配置</li>
+</ul>
+<p><em>关于SunJDK和OpenJDK的区别请自行查阅资料<br></em><br><strong>SunJDK和OpenJDK可以都安装,通过加入软链接，然后用命令切换JDK的版本，很方便</strong></p>
+<hr>
+<ul>
+<li>安装OpenJDK或者SunJDK，Mysql数据库，Tomcat<h3 id="安装OpenJDK"><a href="#安装OpenJDK" class="headerlink" title="安装OpenJDK"></a>安装OpenJDK</h3>1.添加OpenJDK的ppa<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:openjdk-r/ppa</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>2.更新package cache<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get update</div></pre></td></tr></table></figure></p>
+<p>3.安装OpenJDK<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install openjdk-8-jdk</div></pre></td></tr></table></figure></p>
+<p>4.检查是否安装成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<p>OpenJDK安装完不用配环境变量就可以用了的，也不用手动加入软链接，自动加了。</p>
+<h3 id="安装SunJDK"><a href="#安装SunJDK" class="headerlink" title="安装SunJDK"></a>安装SunJDK</h3><ul>
+<li><p>配置java 环境需要下载JDK，到<a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="external">oracle官网</a>下载</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://p1.bqimg.com/4851/c8d2fc20815e6efc.jpg" alt="下载" title="">
+                </div>
+                <div class="image-caption">下载</div>
+            </figure>
+<p>选择Accept License Agreement，然后再根据自己的系统环境选择jdk下载，例如我的是ubuntu 64bit 我选择的是Linux x64。<br><br>下载完解压到相应的目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo tar -zxvf jdk-8u111-linux-x64.tar.gz -C /usr/share</div></pre></td></tr></table></figure>
+</li>
+<li><p>把SunJDK加入软链接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sudo update-alternatives --install /usr/share/dk1.8.0_111/java java /usr/lib/jvm/jdk1.7.0_17/bin/java 300</div><div class="line">sudo update-alternatives --install /usr/share/dk1.8.0_111/javac javac /usr/lib/jvm/jdk1.7.0_17/bin/javac 300</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>测试java环境是否配置成功<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">java -version</div><div class="line">java version <span class="string">"1.8.0_111"</span></div><div class="line">Java(TM) SE Runtime Environment (build 1.8.0_111-b14)</div><div class="line">Java HotSpot(TM) 64-Bit Server VM (build 25.111-b14, mixed mode)</div></pre></td></tr></table></figure></p>
+<p>配置成功显示如上有java版本 java的版本，如果没成功的请仔细检查配置文件</p>
+<ul>
+<li><strong>切换JDK版本</strong><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo update-alternatives --config java</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://oittq0wmc.bkt.clouddn.com/FmAHZ3Myd_ntaBGfUu74Fw-KL7fh.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<p>选择需要的版本</p>
+<ul>
+<li>测试是否切换成功<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">java -version</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="安装Mysql数据库"><a href="#安装Mysql数据库" class="headerlink" title="安装Mysql数据库"></a>安装Mysql数据库</h3><ul>
+<li><p>命令安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install mysql-server</div><div class="line">apt isntall mysql-client</div><div class="line">apt install libmysqlclient-dev</div></pre></td></tr></table></figure>
+</li>
+<li><p>查询是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo netstat -tap | grep mysql</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出如下所示，安装成功：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tcp0       0      0 [::]:mysql              [::]:*                  LISTEN      7510/mysqld</div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>配置Mysql可以远程访问<br>编辑mysql配置文件，在bind-address = 127.0.0.1前面加个#把它注释了</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi /etc/mysql/mysql.conf.d/mysqld.cnf</div></pre></td></tr></table></figure>
+</li>
+<li><p>使用root账号登录Mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql -uroot -p</div></pre></td></tr></table></figure>
+</li>
+<li><p>在Mysql中执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">grant all privileges on *.* to ‘username’@<span class="string">'%'</span> identified by <span class="string">'userpassword'</span> with grand option;</div><div class="line">flush privileges;</div></pre></td></tr></table></figure>
+</li>
+<li><p>重启Mysql</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/etc/init.d/mysql restart</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>现在可以远程连接到数据库了</p>
+<h3 id="安装Tomcat"><a href="#安装Tomcat" class="headerlink" title="安装Tomcat"></a>安装Tomcat</h3><ul>
+<li>在Tomcat官网下载好Tomcat</li>
+<li><p>解压到某个目录下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tar -zxvf apache-tomcat-7.0.68.tar.gz -C /home/username/Server</div></pre></td></tr></table></figure>
+</li>
+<li><p>编辑Tomcat /bin目录下的startup.sh，在exec “$PRGDIR”/“$EXECUTABLE” start “$@”前面加入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#java_home</span></div><div class="line">JAVA_HOME=/usr/share/jdk/jdk1.8.0_111</div><div class="line">JRE_HOME=<span class="variable">$&#123;JAVA_HOME&#125;</span>/jre</div><div class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div><div class="line">CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</div><div class="line">TOMCAT_HOME=/home/username/Server/apache-tomcat-7.0.68</div></pre></td></tr></table></figure>
+</li>
+<li><p>保存，启动Tomcat</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./startup.sh</div></pre></td></tr></table></figure>
+<p>本人是一个爱学习的小菜鸟，如有错漏，欢迎批评指正！^__^</p>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-01-04T17:41:21.000Z" itemprop="dateUpdated">2017年1月5日 1:41</time>
+</span><br>
+
+
+        Copyright © 2017 imchen：<a href="/2017/01/05/LinuxServer/" target="_blank" rel="external">https://j2u.github.io/2017/01/05/LinuxServer/</a>
+    </div>
+    <footer>
+        <a href="https://j2u.github.io">
+            <img src="/img/snowball.jpg" alt="imchen">
+            imchen
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Mysql/">Mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenJDK/">OpenJDK</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tomcat/">Tomcat</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2017/01/05/LinuxServer/&title=《Linux服务器》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2017/01/05/LinuxServer/&title=《Linux服务器》 — imchen blog&source=学无止境" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2017/01/05/LinuxServer/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux服务器》 — imchen blog&url=https://j2u.github.io/2017/01/05/LinuxServer/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2017/01/05/LinuxServer/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/01/17/fixboot/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ubuntu 更新提示boot空间不足解决</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/01/03/css3/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">CSS3一些知识</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+<section class="comments" id="comments">
+    <div id="disqus_thread"></div>
+    <script>
+    var disqus_shortname = 'imch1n';
+    lazyScripts.push('//' + disqus_shortname + '.disqus.com/embed.js')
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            <span>博客内容遵循 <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>imchen blog &copy; 2016 - 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://j2u.github.io/2017/01/05/LinuxServer/&title=《Linux服务器》 — imchen blog&pic=https://j2u.github.io/img/snowball.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://j2u.github.io/2017/01/05/LinuxServer/&title=《Linux服务器》 — imchen blog&source=学无止境" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://j2u.github.io/2017/01/05/LinuxServer/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Linux服务器》 — imchen blog&url=https://j2u.github.io/2017/01/05/LinuxServer/&via=https://j2u.github.io" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://j2u.github.io/2017/01/05/LinuxServer/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://j2u.github.io/2017/01/05/LinuxServer/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@1.5.2/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = 'imchen';
+            clearTimeout(titleTime);
+        } else {
+            document.title = 'imchen';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
